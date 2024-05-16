@@ -84,6 +84,14 @@ PYTHON   = python3
 ```
 to avoid some error.
 
+Some installation tutorial can be found at https://kaizokuow.wordpress.com/2020/10/10/install-gadget4/, https://zhuanlan.zhihu.com/p/326781414 or official document https://wwwmpa.mpa-garching.mpg.de/gadget4.
+
 ## 2.Run Gadget4 using power spectrum with different cutoff wavenumber.
-According to 
+According to Primordial fluctuations and nonlinear structure (Little,Winberg and Park,1991MNRAS.253..295L), we can use Gadget4 to run N-body simulations using power spectrum with different cutoff wavenumber.   
+Here we can simply use DM-L50-N128 in examples. There are some places you need to change.   
+First, change param.txt:
+```
+BoxSize                   128.0
+
+
 
