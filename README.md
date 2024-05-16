@@ -105,4 +105,4 @@ Then, you can comment part of power spectrum with larger frequncy (k>2,4,8,16,32
 mpirun -np 8 ./Gadget4 param.txt
 ```
 Finally, you can get different .hdf5 files at different redshifts.
-You can use h5py in python to read .hdf5 file and get particle coordinates to make a plot. Related file is readhdf5.ipynb.
+You can use h5py in python to read .hdf5 file and get particle information to make a plot. Related file is readhdf5.ipynb.
