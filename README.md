@@ -100,7 +100,7 @@ PowerSpectrumFile                                 ps.txt
 ```
 Here, I provide a power spectrum ps.txt. According to this paper, $P=Ak^{-1}$, and rms linear fluctuation is unity in a sphere of radius 16 Mpc/h. In this power spectrum file, two columns are $log(k)$ and $log(\Delta^2)$ respectively, and $\Delta^2=4\pi k^3 P(k)$ here.   
 In this simulation, the smallest frequncy is fundamental frequncy $\frac{\pi}{64} h Mpc^{-1}$($k=1$ in paper), and the largest frequncy is Nyquist frequncy $\pi h Mpc^{-1}$($k_N=64$ in paper).   
-Then, you can comment part of power spectrum with larger frequncy (k>2,4,8,16,32 in paper), then run
+Then, you can delete part of power spectrum with larger frequncy (k>2,4,8,16,32 in paper), then run
 ```
 mpirun -np 8 ./Gadget4 param.txt
 ```
