@@ -96,13 +96,13 @@ BoxSize                   128.0
 PowerSpectrumType                                 2
 ReNormalizeInputSpectrum                          0
 ...
-PowerSpectrumFile                                 ps.txt
+PowerSpectrumFile                                 powersp.txt
 ```
-Here, I provide a power spectrum ps.txt. According to this paper, $P=Ak^{-1}$, and rms linear fluctuation is unity in a sphere of radius 16 Mpc/h. In this power spectrum file, two columns are $log(k)$ and $log(\Delta^2)$ respectively, and $\Delta^2=4\pi k^3 P(k)$ here.   
-In this simulation, the smallest frequncy is fundamental frequncy $\frac{\pi}{64} h Mpc^{-1}$($k=1$ in paper), and the largest frequncy is Nyquist frequncy $\pi h Mpc^{-1}$($k_N=64$ in paper).   
-Then, you can delete part of power spectrum with larger frequncy (k>2,4,8,16,32 in paper), then run
+Here, I provide a power spectrum powersp.txt based on Planck 2018 cosmological parameter. In this power spectrum file, two columns are $log(k)$ and $log(\Delta^2)$ respectively inorder to satisfy require of Gadget4. $\Delta^2=\frac {k^3 P(k)}{2\pi^2}$ and $log$ to the base 10 here.   
+According to this paper, in this simulation, the smallest frequncy is fundamental frequncy $\frac{\pi}{64} h Mpc^{-1}$($k=1$ in paper), and the largest frequncy is Nyquist frequncy $\pi h Mpc^{-1}$($k_N=64$ in paper).   
+Then, you can delete part of power spectrum with larger frequncy $k>\frac{\pi}{32},\frac{\pi}{16},\frac{\pi}{8},\frac{\pi}{4},\frac{\pi}{2} h Mpc^{-1}$ (k>2,4,8,16,32 in paper), then run
 ```
 mpirun -np 8 ./Gadget4 param.txt
 ```
-Finally, you can get different .hdf5 files at different redshifts. You can change output.txt to choose output redshifts (here data in output.txt is scale factor a, you can choose 1.0 to set redshift as z=0).    
+Finally, you can get different .hdf5 files at different redshifts. You can change output.txt to choose output redshifts (here parameter in output.txt is scale factor a, you can choose 1.0 to set redshift as z=0).    
 You can use h5py in python to read .hdf5 file and get particle information to make a plot. Related file is readhdf5.ipynb.
