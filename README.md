@@ -1,5 +1,7 @@
 # Gadget-with-cutoff-power-spectrum
 
+This is a simple application of N-body simulation code Gadget4, which trys to run simple simulation using power spectrum with different cutoff frequncy and repeat result in Primordial fluctuations and nonlinear structure (Little,Winberg and Park,1991MNRAS.253..295L).
+
 ## 1.Install Gadget4
 
 Gadget4 is a code for N-body cosmology simulation based on C++. You can find Gadget4 code at http://gitlab.mpcdf.mpg.de/vrs/gadget4. Also a detailed document is provided at https://wwwmpa.mpa-garching.mpg.de/gadget4. There are some simple tips on installing Gadegt4.   
