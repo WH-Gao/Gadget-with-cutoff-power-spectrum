@@ -108,5 +108,5 @@ Then, you can delete part of power spectrum with larger frequncy $k>\frac{\pi}{3
 mpirun -np 8 ./Gadget4 param.txt
 ```
 Finally, you can get different .hdf5 files at different redshifts. You can change output.txt to choose output redshifts (here parameter in output.txt is scale factor a, you can choose 1.0 to set redshift as z=0).    
-You can use h5py in python to read .hdf5 file and get particle information to make a plot. An example is in readhdf5.ipynb.
+You can use h5py in python to read .hdf5 file and get particle information to make a plot. An example is in readhdf5.ipynb.   
 Here k_64.png and k_4.png are two results without cutoff and with cutoff at \frac{\pi}{16} respectively.
