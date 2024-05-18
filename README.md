@@ -88,7 +88,8 @@ Some installation tutorials can be found at https://kaizokuow.wordpress.com/2020
 
 ## 2.Run Gadget4 using power spectrum with different cutoff frequncy.
 According to Primordial fluctuations and nonlinear structure (Little,Winberg and Park,1991MNRAS.253..295L), you can use Gadget4 to run N-body simulations using power spectrum with different cutoff frequncy.   
-Here you can simply use DM-L50-N128 in examples. There are some places you need to change.   
+Here you can simply use DM-L50-N128 in examples, a simulation from redshift z=63 to z=0.    
+There are some parameters you need to change.   
 First, change param.txt:
 ```
 BoxSize                   128.0
@@ -98,7 +99,7 @@ ReNormalizeInputSpectrum                          0
 ...
 PowerSpectrumFile                                 powersp.txt
 ```
-Here, I provide a power spectrum powersp.txt based on Planck 2018 cosmological parameter. In this power spectrum file, two columns are $log(k)$ and $log(\Delta^2)$ respectively inorder to satisfy require of Gadget4. $\Delta^2=\frac {k^3 P(k)}{2\pi^2}$ and $log$ to the base 10 here.   
+Here, I provide a power spectrum powersp.txt at redshift z=63 based on Planck 2018 cosmological parameter. In this power spectrum file, two columns are $log(k)$ and $log(\Delta^2)$ respectively inorder to satisfy require of Gadget4. $\Delta^2=\frac {k^3 P(k)}{2\pi^2}$ and $log$ to the base 10 here.   
 According to this paper, in this simulation, the smallest frequncy is fundamental frequncy $\frac{\pi}{64} h Mpc^{-1}$($k=1$ in paper), and the largest frequncy is Nyquist frequncy $\pi h Mpc^{-1}$($k_N=64$ in paper).   
 Then, you can delete part of power spectrum with larger frequncy $k>\frac{\pi}{32},\frac{\pi}{16},\frac{\pi}{8},\frac{\pi}{4},\frac{\pi}{2} h Mpc^{-1}$ (k>2,4,8,16,32 in paper), then run
 ```
