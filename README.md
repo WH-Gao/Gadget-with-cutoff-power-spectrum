@@ -105,7 +105,7 @@ ReNormalizeInputSpectrum                          0
 PowerSpectrumFile                                 powersp.txt
 InputSpectrum_UnitLength_in_cm                    3.085678e24
 ```
-Here, I provide a power spectrum powersp.txt at redshift z=63 based on Planck 2018 cosmological parameter. In this power spectrum file, two columns are $log(k)$ and $log(\Delta^2)$ respectively inorder to satisfy require of Gadget4. $\Delta^2=\frac {k^3 P(k)}{2\pi^2}$ and $log$ to the base 10 here. You need put this power spectrum file into your path.  
+Here, I provide a power spectrum powersp.txt at redshift z=63 based on Planck 2018 cosmological parameter. In this power spectrum file, two columns are $log(k)$ and $log(\Delta^2)$ respectively inorder to satisfy require of Gadget4. $\Delta^2=\frac {k^3 P(k)}{2\pi^2}$ and $log$ to the base 10 here. You need put this power spectrum file into your path. If you use WSL (windows subsystem for linux), you may find your files in the path \\wsl$.
 According to this paper, in this simulation, the smallest frequncy is fundamental frequncy $\frac{\pi}{32} h Mpc^{-1}$, and the largest frequncy is Nyquist frequncy $\pi h Mpc^{-1}$.   
 Then, you can delete part of power spectrum with larger frequncy $k>\frac{\pi}{16},\frac{\pi}{8},\frac{\pi}{4},\frac{\pi}{2} h Mpc^{-1}$, then run
 ```
