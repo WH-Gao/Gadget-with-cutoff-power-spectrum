@@ -103,6 +103,7 @@ PowerSpectrumType                                 2
 ReNormalizeInputSpectrum                          0
 ...
 PowerSpectrumFile                                 powersp.txt
+InputSpectrum_UnitLength_in_cm                    3.085678e24
 ```
 Here, I provide a power spectrum powersp.txt at redshift z=63 based on Planck 2018 cosmological parameter. In this power spectrum file, two columns are $log(k)$ and $log(\Delta^2)$ respectively inorder to satisfy require of Gadget4. $\Delta^2=\frac {k^3 P(k)}{2\pi^2}$ and $log$ to the base 10 here. You need put this power spectrum file into your path.  
 According to this paper, in this simulation, the smallest frequncy is fundamental frequncy $\frac{\pi}{32} h Mpc^{-1}$, and the largest frequncy is Nyquist frequncy $\pi h Mpc^{-1}$.   
@@ -112,9 +113,9 @@ mpirun -np 8 ./Gadget4 param.txt
 ```
 Finally, you can get different .hdf5 files at different redshifts. You can change output.txt to choose output redshifts (here parameter in output.txt is scale factor a, you can choose 1.0 to set redshift as z=0).    
 You can use h5py in python to read .hdf5 file and get particle information to make a plot. An example is in readhdf5.ipynb.   
-Here k_64.png and k_4.png are two results without cutoff and with cutoff at \frac{\pi}{16} for a $128^3$ particles simulation in $128 h^{-1}Mpc$ box respectively.  
-You can change BoxSize, Nsample to change resolution of simulation, also you can use different number of nodes to run Gadget4 by change 
+Here k_64.png and k_4.png are two results without cutoff and with cutoff at \frac{\pi}{16} for a $128^3$ particles simulation in $128 h Mpc^{-1}$ box respectively.  
+You can change BoxSize, Nsample to change resolution of simulation, you can also use different number of nodes to run Gadget4 by change 
 ```
 mpirun -np x ./Gadget4 param.txt
 ```
-number x here.
+number x here. Seed in param.txt can be changed to change initial distribution of dark matter particles.
